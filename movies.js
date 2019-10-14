@@ -2,6 +2,13 @@
 const credentials = require('./credentials.js')
 const request = require('request')
 
+if(process.env.NODE_ENV === 'production') {
+	var apikey = provess.env.API_KEY
+} else {
+	const credentials = require('./credentials.js')
+	var apikey = credentials.apikey
+}
+
 const omdbMovie = function(title, callback) {
 	const url = 'http://www.omdbapi.com/?apikey=' + credentials.apikey + 
 				'&t=' + title 
