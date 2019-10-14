@@ -2,7 +2,7 @@
 const request = require('request')
 
 if(process.env.NODE_ENV === 'production') {
-	var apikey = provess.env.API_KEY
+	var apikey = process.env.API_KEY
 } else {
 	const credentials = require('./credentials.js')
 	var apikey = credentials.apikey
